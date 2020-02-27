@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <nav class='bg-primary'>
+        <h2 class="text-center text-light ">Weather Dashboard</h2>
+    </nav>    
+    <div>
+        <div class='row'>
+            <div class='col-sm-4'>
+                <form id="city-form">
+                    <label for="cityInput">Search for a City:</label>
+                    <div>
+                        <input type="text" id="cityInput" placeholder="Helotes,TX " size="10">              
+                        <!-- Button triggers new city to be added -->
+                        <input id="addCity"  type="submit" value="Go" >
+                        <br>
+                    </div>
+                    <br>
+                </form>
+                <div id='citiesView'></div>
+            </div>                 
+            <div class='col-sm-8'>
+                <div class='row'>                    
+                    <h5>City Chosen</h5>
+                </div>
+                <div  id='temp' class='row'>                              
+                        <p>Temperature:</p> 
+                </div>                  
+                <div id='Humidity' class='row'>                      
+                    <p>Humidity:</p>
+                </div> 
+                <div id='windSpeed' class='row'>                     
+                    <p>Wind Speed:</p> 
+                </div> 
+                <div id='uvIndex' class='row'>                   
+                    <p>UV Index:</p>
+                </div>
+                <div class='row'>
+                    <h5>5 day forcast:</h5>
+                    <div class='row'>
+                        <div class="col-sm-2">
+                            <div class="card">
+                                <img src="" class="card-img-top img-fluid h-50" alt="Today's Weather">
+                                <div class="card-body">
+                                    <!-- <a href="https://dritchie3.github.io/homework/01-Code%20Refactor/index.html" target="_blank" class="btn btn-success">Code Refactor Project</a> -->
+                                </div>
+                            </div>
+                        </div>                           
+                        <div class="col-sm-2">
+                            <div class="card">
+                                <img src="" class="card-img-top img-fluid h-50" alt="Day 2 Weather">
+                                <div class="card-body">
+                                    <!-- <a href="https://dritchie3.github.io/homework/01-Code%20Refactor/index.html" target="_blank" class="btn btn-success">Code Refactor Project</a> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="card">
+                                <img src="" class="card-img-top img-fluid h-50" alt="Day 3 Weather">
+                                <div class="card-body">
+                                    <!-- <a href="https://dritchie3.github.io/homework/01-Code%20Refactor/index.html" target="_blank" class="btn btn-success">Code Refactor Project</a> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="card">
+                                <img src="" class="card-img-top img-fluid h-50" alt="Day 4 Weather">
+                                <div class="card-body">
+                                    <!-- <a href="https://dritchie3.github.io/homework/01-Code%20Refactor/index.html" target="_blank" class="btn btn-success">Code Refactor Project</a> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="card">
+                                <img src="" class="card-img-top img-fluid h-50" alt="Day 5 Weather">
+                                <div class="card-body">
+                                    <!-- <a href="https://dritchie3.github.io/homework/01-Code%20Refactor/index.html" target="_blank" class="btn btn-success">Code Refactor Project</a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="script.js"></script>    
+</body>
+</html>
