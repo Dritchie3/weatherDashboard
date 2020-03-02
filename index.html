@@ -1,102 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <link rel="stylesheet" href="style.css" />
 
     <title>Weather Dashboard</title>
-</head>
-<body>
-    <nav class='bg-primary'>
-        <h2 class="text-center text-light ">Weather Dashboard</h2>
-    </nav>    
+  </head>
+  <body>
+    <nav class="bg-primary">
+      <h2 class="text-center text-light ">Weather Dashboard</h2>
+    </nav>
     <div>
-        <div class='row'>
-            <div class='col-sm-4'>
-                <form id="city-form">
-                    <label for="cityInput">Search for a City:</label>
-                    <div>
-                        <input type="text" id="cityInput" placeholder="Helotes,TX " size="10">              
-                        <!-- Button triggers new city to be added -->
-                        <input id="addCity"  type="submit" value="Go" >
-                        <br>
-                    </div>
-                    <br>
-                </form>
-                <div id='citiesView'></div>
-            </div>                 
-            <div class='col-sm-8'>
-                <div class='row'>                    
-                    <h5>City Chosen</h5>
-                </div>
-                <div  id='temp' class='row'>                              
-                        <p>Temperature:</p> 
-                </div>                  
-                <div id='Humidity' class='row'>                      
-                    <p>Humidity:</p>
-                </div> 
-                <div id='windSpeed' class='row'>                     
-                    <p>Wind Speed:</p> 
-                </div> 
-                <div id='uvIndex' class='row'>                   
-                    <p>UV Index:</p>
-                </div>
-                <div class='row'>
-                    <h5>5 day forcast:</h5>
-                    <div class='row'>
-                        <div class="col-sm-2">
-                            <div class="card">
-                                <img src="" class="card-img-top img-fluid h-50" alt="Today's Weather">
-                                <div class="card-body">
-                                    <!-- <a href="https://dritchie3.github.io/homework/01-Code%20Refactor/index.html" target="_blank" class="btn btn-success">Code Refactor Project</a> -->
-                                </div>
-                            </div>
-                        </div>                           
-                        <div class="col-sm-2">
-                            <div class="card">
-                                <img src="" class="card-img-top img-fluid h-50" alt="Day 2 Weather">
-                                <div class="card-body">
-                                    <!-- <a href="https://dritchie3.github.io/homework/01-Code%20Refactor/index.html" target="_blank" class="btn btn-success">Code Refactor Project</a> -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-2">
-                            <div class="card">
-                                <img src="" class="card-img-top img-fluid h-50" alt="Day 3 Weather">
-                                <div class="card-body">
-                                    <!-- <a href="https://dritchie3.github.io/homework/01-Code%20Refactor/index.html" target="_blank" class="btn btn-success">Code Refactor Project</a> -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-2">
-                            <div class="card">
-                                <img src="" class="card-img-top img-fluid h-50" alt="Day 4 Weather">
-                                <div class="card-body">
-                                    <!-- <a href="https://dritchie3.github.io/homework/01-Code%20Refactor/index.html" target="_blank" class="btn btn-success">Code Refactor Project</a> -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-2">
-                            <div class="card">
-                                <img src="" class="card-img-top img-fluid h-50" alt="Day 5 Weather">
-                                <div class="card-body">
-                                    <!-- <a href="https://dritchie3.github.io/homework/01-Code%20Refactor/index.html" target="_blank" class="btn btn-success">Code Refactor Project</a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <form id="city-form">
+            <label class="px-2" for="cityInput">Search for a City:</label>
+            <div>
+              <input type="text" id="cityInput" class="px-2" placeholder="San Antonio" size="10"/>
+              <!-- Button triggers new city to be added -->
+              <input id="addCity" type="submit" value="Go" />
+              <br />
             </div>
+            <br />
+          </form>
+          <div id="citiesView" class="block"></div>
         </div>
+        <div class="col-sm-9" >
+        <div>
+          <div class="row">
+            <h5 id="enteredCity"></h5>
+          </div>
+          <!-- todays currecnt weather -->
+          <div id="temp" class="row p-2">
+          </div>
+          <div id="humidity" class="row p-2">
+          </div>
+          <div id="windSpeed" class="row p-2">
+          </div>
+          <div id="uvIndex" class="row p-2">
+            <p>UV Index:</p>
+          </div>
+        </div>
+          <div>
+              <h5 class="row">5 day forcast:</h5>
+            </div>
+            <div class="row">
+              <!-- the containers for the 5 day forcast -->
+              <div class="col-sm-2 mb-2">
+                <div id="day1" class="card bg-primary">                  
+                  <p id="day1Date"></p>
+                  <div id="day1Icon">
+                  </div>
+                  <p id="day1Temp"></p>
+                  <p id="day1Humidity"></p>                  
+                </div>
+              </div>
+              <div class="col-sm-2 mb-2 ">
+                <div id="day2" class="card bg-primary">
+                  <p id="day2Date"></p>
+                  <div id="day2Icon">
+                  </div>
+                  <p id="day2Temp"></p>
+                  <p id="day2Humidity"></p>                  
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div id="day3" class="card bg-primary">
+                  <p id="day3Date"></p>
+                  <div id="day3Icon">
+                  </div>
+                  <p id="day3Temp"></p>
+                  <p id="day3Humidity"></p>                  
+                </div>
+              </div>
+              <div class="col-sm-2 mb-2">
+                <div id="day4" class="card bg-primary">
+                  <p id="day4Date"></p>
+                  <div id="day4Icon">
+                  </div>
+                  <p id="day4Temp"></p>
+                  <p id="day4Humidity"></p>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div id="day5" class="card bg-primary">
+                  <p id="day5Date"></p>
+                  <div id="day5Icon">
+                  </div>
+                  <p id="day5Temp"></p>
+                  <p id="day5Humidity"></p>                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    
-    
-    
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="script.js"></script>    
-</body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
