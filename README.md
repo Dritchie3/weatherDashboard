@@ -1,5 +1,6 @@
+Weather Dashboard
 
-
+This project had us use openweathermap.com's API.  We used ajax to query search.  It allowed us to stengthen our skills in html, bootstrap and jquery. It incompassed click events, styling, reading API's and quering them. reporting the data foundon our page.  I incorperated moment.com in order to set the date for the 5 dy forcast. 
 
 
 
@@ -7,9 +8,7 @@ github URL: https://github.com/Dritchie3/weatherDashboard/
 
 github live URL: https://dritchie3.github.io/weatherDashboard/
 
-AboutMe project page URL:  https://dritchie3.github.io/AboutMe/portfolio.html
-
-
+AboutMe project page URL:  https://dritchie3.github.io/AboutMe/portfolio.html/
 
 
 
